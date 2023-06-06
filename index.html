@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Fingerprinting in Text-to-Image Diffusion Models.">
+  <meta name="keywords" content="Diffusion, Text-to-Image, User Attribution, Fingerprinting, Vision, NLP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"> <span class="dnerf">WOUAF</span>: <p style="font-size:xx-large;">
+                Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Models</p>
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://sites.google.com/asu.edu/changhoonkim?pli=1">Changhoon Kim</a><sup>*1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/kylemin">Kyle Min</a><sup>*2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://maitreyapatel.com">Maitreya Patel</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/sheng-cheng-661826118/">Sheng Cheng</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://yezhouyang.engineering.asu.edu/">Yezhou Yang</a><sup>1</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Arizona State University,</span>
+              <span class="author-block"><sup>2</sup>Intel Labs</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (soon!)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Demo (soon!)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">WOUAF</span> adds up to 128-bit fingerprints into any diffusion model (including
+          Text-to-Image models) without loss in image quality.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="footer">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The rapid advancement of generative models, facilitating the creation of hyper-realistic images from
+              textual descriptions, has concurrently escalated critical societal concerns such as misinformation.
+              Traditional fake detection mechanisms, although providing some mitigation, fall short in attributing
+              responsibility for the malicious use of synthetic images. This paper introduces a novel approach to model
+              fingerprinting that assigns responsibility for the generated images, thereby serving as a potential
+              countermeasure to model misuse. Our method modifies generative models based on each user's unique digital
+              fingerprint, imprinting a unique identifier onto the resultant content that can be traced back to the
+              user. This approach, incorporating fine-tuning into Text-to-Image (T2I) tasks using the Stable Diffusion
+              Model, demonstrates near-perfect attribution accuracy with a minimal impact on output quality. We
+              rigorously scrutinize our method's secrecy under two distinct scenarios: one where a malicious user
+              attempts to detect the fingerprint, and another where a user possesses a comprehensive understanding of
+              our method. We also evaluate the robustness of our approach against various image post-processing
+              manipulations typically executed by end-users. Through extensive evaluation of the Stable Diffusion
+              models, our method presents a promising and novel avenue for accountable model distribution and
+              responsible use. Our code is available in the supplementary material.
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Recheck image. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="./static/images/recheck_workflow.svg">
+        </div>
+      </div>
+      <!--/ Recheck image. -->
+  </section>
+
+  <section class="section">
+
+
+
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              There's a lot of excellent work focusing on attributing diffusion works.
+            </p>
+            <p>
+              <a href="#">NAME</a> that decoder based parallel work
+            </p>
+            <p>
+              <a href="#">NAME</a> that wavelet based fingerprinting work
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{kim2023wouaf,
+    author = {Kim, Changhoon and Min, Kyle and Patel, Maitreya and Cheng, Sheng and Yang, Yezhou},
+    title = {WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Models},
+    year = {2023},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/maitreyapatel" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <center>
+              <p>
+                This website template is take from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                and
+                modified by <a href="https://maitreyapatel.com">Maitreya Patel</a>.
+              </p>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
