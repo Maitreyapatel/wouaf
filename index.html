@@ -85,7 +85,7 @@
                 <a href="https://www.linkedin.com/in/sheng-cheng-661826118/">Sheng Cheng</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://yezhouyang.engineering.asu.edu/">Yezhou Yang</a><sup>1</sup>,
+                <a href="https://yezhouyang.engineering.asu.edu/">Yezhou Yang</a><sup>1</sup>
               </span>
             </div>
 
@@ -134,9 +134,7 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/teaser.mp4" type="video/mp4">
-        </video>
+        <img src="./static/images/figs/fig2.png">
         <h2 class="subtitle has-text-centered">
           <span class="dnerf">WOUAF</span> adds up to 128-bit fingerprints into any diffusion model (including
           Text-to-Image models) without loss in image quality.
@@ -175,20 +173,24 @@
       </div>
       <!--/ Abstract. -->
 
-      <!-- Recheck image. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <img src="./static/images/recheck_workflow.svg">
+          <img src="./static/images/figs/fig4.png">
         </div>
       </div>
-      <!--/ Recheck image. -->
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="./static/images/figs/fig5.png">
+        </div>
+      </div>
+
+      <h2 class="subtitle has-text-centered">
+        More results of <span class="dnerf">WOUAF</span> are shown in the paper and the code would be available soon.
+      </h2>
+
   </section>
 
-  <section class="section">
-
-
-
-  </section>
 
 
   <section class="section">
@@ -202,13 +204,18 @@
 
           <div class="content has-text-justified">
             <p>
-              There's a lot of excellent work focusing on attributing diffusion works.
+              There's a lot of excellent parallel work focusing on attributing diffusion models.
             </p>
             <p>
-              <a href="#">NAME</a> that decoder based parallel work
+              <a href="https://arxiv.org/abs/2303.15435">The Stable Signature: Rooting Watermarks in Latent Diffusion
+                Models</a> shows a similar approach to modifying the VAE decoder for each user fingerprint one at a
+              time.
             </p>
             <p>
-              <a href="#">NAME</a> that wavelet based fingerprinting work
+              <a href="https://arxiv.org/abs/2305.20030">Tree-Ring Watermarks: Fingerprints for Diffusion Images that
+                are Invisible and Robust
+              </a> presents an alternative approach to add a watermark without post-hoc modifications, similar to other
+              parallel studies.
             </p>
           </div>
         </div>
