@@ -33,6 +33,9 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.34.0/gradio.js"></script>
+
 </head>
 
 <body>
@@ -69,25 +72,31 @@
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://sites.google.com/asu.edu/changhoonkim?pli=1">Changhoon Kim</a><sup>*1</sup>,
+                <a href="https://sites.google.com/asu.edu/changhoonkim?pli=1"
+                  style="color:#f68946;font-weight:normal;">Changhoon Kim</a><sup>*</sup>,
               </span>
               <span class="author-block">
-                <a href="https://sites.google.com/view/kylemin">Kyle Min</a><sup>*2</sup>,
+                <a href="https://sites.google.com/view/kylemin" style="color:#008AD7;font-weight:normal;">Kyle
+                  Min</a><sup>*</sup>,
               </span>
               <span class="author-block">
-                <a href="https://maitreyapatel.com">Maitreya Patel</a><sup>1</sup>,
+                <a href="https://maitreyapatel.com" style="color:#f68946;font-weight:normal;">Maitreya
+                  Patel</a>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/sheng-cheng-661826118/">Sheng Cheng</a><sup>1</sup>,
+                <a href="https://www.linkedin.com/in/sheng-cheng-661826118/"
+                  style="color:#f68946;font-weight:normal;">Sheng Cheng</a>,
               </span>
               <span class="author-block">
-                <a href="https://yezhouyang.engineering.asu.edu/">Yezhou Yang</a><sup>1</sup>
+                <a href="https://yezhouyang.engineering.asu.edu/" style="color:#f68946;font-weight:normal;">Yezhou
+                  Yang</a>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Arizona State University,</span>
-              <span class="author-block"><sup>2</sup>Intel Labs</span>
+              <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b>Arizona State
+                University;</span>
+              <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b>Intel Labs</span>
             </div>
 
             <div class="column has-text-centered">
@@ -111,7 +120,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://huggingface.co/spaces/mpatel57/WOUAF-Text-to-Image"
+                  <a href="https://huggingface.co/spaces/wouaf/WOUAF-Text-to-Image"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -198,6 +207,10 @@
       <h2 class="subtitle has-text-centered">
         More results of <span class="dnerf">WOUAF</span> are shown in the paper and the demo would be available soon.
       </h2>
+
+
+      <gradio-app src="https://wouaf-wouaf-text-to-image.hf.space"></gradio-app>
+
 
   </section>
 
